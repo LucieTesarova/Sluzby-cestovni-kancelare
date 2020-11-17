@@ -1,3 +1,19 @@
-h1{
-    color: $color-primary;
+html {
+  box-sizing: border-box;
 }
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $medium;
+  font-weight: 300;
+  background-color: $color-bacground;
+}
+h1 {
+  color: $color-blue;
+}
+
