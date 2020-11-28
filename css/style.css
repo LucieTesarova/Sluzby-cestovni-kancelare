@@ -11,13 +11,142 @@ html {
 }
 
 body {
+  margin: 0;
+  padding: 0;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 300;
   background-color: #FAFAFA;
 }
 
-h1 {
-  color: #407BFF;
+.container {
+  margin: 0 auto;
+}
+
+.main-section {
+  padding-top: 60px;
+  text-align: center;
+}
+
+.main-section__image-container {
+  width: 21.875rem;
+  margin: 0 auto;
+}
+
+.main-section__image-container img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main-section__texts-container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.main-section__title {
+  position: relative;
+  color: #000000;
+  font-size: 28px;
+}
+
+.main-section__title::after {
+  content: "";
+  position: absolute;
+  background-color: #407BFF;
+  bottom: -10px;
+  left: calc(50% - 30px);
+  height: 2px;
+  width: 60px;
+}
+
+.main-section__text {
+  color: #8B8B8B;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.main-section__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-section__button {
+  background-color: #407BFF;
+  color: #FFFFFF;
+  font-size: 14px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 11px 30px;
+  border-radius: 20px;
+  border: none;
+}
+
+.main-section__button-grey {
+  background-color: #8B8B8B;
+}
+
+@media screen and (min-width: 40rem) {
+  .main-section__buttons {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .main-section__texts-container {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media screen and (min-width: 68.75rem) {
+  .main-section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+  .main-section__texts-container {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+  .main-section__image-container {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+  .main-section__image-container {
+    width: 26.56rem;
+  }
+  .main-section__title::after {
+    left: 0;
+  }
+  .main-section__buttons {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
 }
 /*# sourceMappingURL=style.css.map */
