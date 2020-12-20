@@ -14,17 +14,20 @@ body {
   font-size: $medium;
   font-weight: 300;
   background-color: $color-bacground;
+  color: $color-grey;
+}
+
+.title {
+  color: $color-black;
+  font-weight: 500;
 }
 
 .container {
-  margin: 0 auto;
-  padding: 60px 20px;
+  margin: 60px auto;
   display: grid;
   gap: 80px;
-}
 
-@media screen and (min-width: $pc) {
-  .container {
+  @media screen and (min-width: $pc) {
     width: 1040px;
   }
 }
@@ -32,28 +35,41 @@ body {
 .main-image-container {
   max-width: 425px;
   margin: 0 auto;
-}
 
-.main-image-container img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @media screen and (min-width: $pc) {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
 }
 
 .main-texts-container {
   text-align: center;
-}
 
-@media screen and (min-width: $tablet) {
-  .main-texts-container {
+  @media screen and (min-width: $tablet) {
     padding-left: 90px;
     padding-right: 90px;
+  }
+
+  @media screen and (min-width: $pc) {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 .main-title {
   position: relative;
-  color: $color-black;
   font-size: $large;
 }
 
@@ -65,10 +81,10 @@ body {
   left: calc(50% - 30px);
   height: 2px;
   width: 60px;
-}
 
-.main-text {
-  color: $color-grey;
+  @media screen and (min-width: $pc) {
+    left: 0;
+  }
 }
 
 .main-buttons {
@@ -76,12 +92,15 @@ body {
   flex-direction: column;
   gap: 20px;
   align-items: center;
-}
+  margin: 40px;
 
-@media screen and (min-width: $tablet) {
-  .main-buttons {
+  @media screen and (min-width: $tablet) {
     flex-direction: row;
     justify-content: center;
+  }
+
+  @media screen and (min-width: $pc) {
+    justify-content: left;
   }
 }
 
@@ -90,29 +109,5 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: left;
-  }
-
-  .main-texts-container {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .main-image-container {
-    grid-column: 2/3;
-    grid-row: 1/2;
-  }
-
-  .main-title::after {
-    left: 0;
-  }
-
-  .main-buttons {
-    justify-content: left;
   }
 }
